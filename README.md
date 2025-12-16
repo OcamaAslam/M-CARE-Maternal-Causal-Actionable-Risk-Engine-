@@ -2,14 +2,14 @@
 
 **M-CARE** is an advanced AI-driven framework designed to assess maternal health risks during pregnancy. Unlike traditional "black box" predictive models, M-CARE focuses on **Interpretability** and **Actionability**. It not only predicts if a patient is at "High Risk" but also explains *why* (using SHAP-IQ) and prescribes *how* to lower that risk (using DiCE counterfactuals).
 
-## 🚀 Key Features
+## Key Features
 
   * **Foundation Model for Tabular Data:** Utilizes **TabPFN** (Tabular Prior-Fitted Network), a Transformer-based model pre-trained on synthetic datasets. It enables state-of-the-art accuracy on small-to-medium datasets without the need for extensive hyperparameter tuning.
   * **High-Order Interpretability:** Uses **SHAP-IQ** to visualize complex feature interactions, offering a deeper "Diagnosis" than standard feature importance methods.
   * **Actionable Prescriptions:** Integrates **DiCE** (Diverse Counterfactual Explanations) to act as an "AI Doctor." It generates medically valid, personalized plans (Counterfactuals) to transition a patient from "High Risk" to "Low Risk."
   * **Medical Safety Bounds:** The prescriptive engine is constrained by real-world clinical ranges to ensure suggestions are physiologically possible (e.g., keeping Body Temp between 97°F-99°F).
 
-## 📊 Dataset
+## Dataset
 
 The model is trained on the **Maternal Health Risk Assessment Dataset** (sourced from Mendeley Data). It contains clinical and physiological data points including:
 
@@ -20,7 +20,7 @@ The model is trained on the **Maternal Health Risk Assessment Dataset** (sourced
   * **HeartRate:** Heart rate (bpm).
   * **Risk Level:** Target variable (Mapped to: 0 = Low Risk, 1 = High Risk).
 
-## 🛠️ Tech Stack
+## Tech Stack
 
   * **Python 3.10+**
   * **Modeling:** `TabPFN` (Transformer for Tabular Classification)
@@ -28,7 +28,7 @@ The model is trained on the **Maternal Health Risk Assessment Dataset** (sourced
   * **Data Processing:** `pandas`, `numpy`, `scikit-learn`
   * **Visualization:** `matplotlib`
 
-## 📦 Installation
+## Installation
 
 To replicate this environment, install the required dependencies:
 
@@ -63,14 +63,14 @@ pip install tabpfn dice-ml shapiq pandas scikit-learn matplotlib numpy
       * Optimizes for the minimal set of changes required to flip the prediction from "High" to "Low."
       * Outputs an actionable plan (e.g., *"Reduce Systolic BP by 12.2 mmHg"*).
 
-## 📈 Performance
+## Performance
 
 In the provided notebook run, M-CARE achieved exceptional performance:
 
   * **Accuracy:** **99.16%** on the test set.
   * **Confusion Matrix:** Demonstrated high precision and recall for determining risk categories.
 
-## 🩺 Example Output
+## Example Output
 
 **Patient Diagnosis:**
 
@@ -81,7 +81,7 @@ In the provided notebook run, M-CARE achieved exceptional performance:
 >   * **Reduce** Systolic BP by 12.2 (Target: 117.8)
 >   * **Reduce** BMI by 6.5 (Target: 21.0)
 
-## 📄 Acknowledgements
+## Acknowledgements
 
   * **Dataset:** Mojumdar, Mayen Uddin et al. (2024), “Maternal Health Risk Assessment Dataset”, Mendeley Data, V1.
   * **Libraries:** This project leans heavily on the open-source contributions of the [TabPFN](https://github.com/automl/TabPFN), [DiCE](https://github.com/interpretml/DiCE), and [shapiq](https://www.google.com/search?q=https://github.com/shapiq/shapiq) teams.
