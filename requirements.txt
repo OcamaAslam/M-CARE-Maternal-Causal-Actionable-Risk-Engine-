@@ -1,0 +1,8 @@
+pandas==2.2.2
+numpy==2.0.2
+matplotlib==3.10.0
+scikit-learn==1.6.1
+tabpfn==6.0.6
+dice-ml==0.12
+shapiq==1.4.1
+torch>=2.0.0
